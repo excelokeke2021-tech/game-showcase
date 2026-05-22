@@ -1,0 +1,356 @@
+/* RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* BODY */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #0d0d0d;
+    color: white;
+}
+
+
+/* NAVBAR */
+
+.navbar {
+    width: 100%;
+    padding: 20px 50px;
+    background: #111;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: fixed;
+    top: 0;
+
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: cyan;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: cyan;
+}
+
+.contact-section {
+    padding: 120px 5%;
+    color: white;
+    text-align: center;
+}
+
+.contact-box {
+    max-width: 500px;
+    margin: 30px auto;
+}
+
+.contact-box form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-box input,
+.contact-box textarea {
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+}
+
+.contact-box button {
+    padding: 12px;
+    background: cyan;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+.contact-box button:hover {
+    background: white;
+    color: black;
+}
+
+
+.about-section {
+    padding: 120px 5%;
+    color: white;
+    max-width: 900px;
+    margin: auto;
+}
+
+.about-section h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.intro {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #ccc;
+}
+
+.about-box {
+    background: #1a1a1a;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+}
+
+.about-box h2 {
+    color: cyan;
+    margin-bottom: 10px;
+}
+
+.about-box ul {
+    padding-left: 20px;
+    color: #ddd;
+}
+
+.about-box p {
+    color: #ddd;
+}
+
+
+/* HERO SECTION */
+
+.hero {
+    width: 100%;
+    height: 100vh;
+
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.7),
+            rgba(0, 0, 0, 0.7)),
+        url("../images/gaming.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    padding: 20px;
+}
+
+.hero-content h1 {
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.hero-btn {
+    text-decoration: none;
+    background: cyan;
+    color: black;
+
+    padding: 15px 35px;
+    border-radius: 10px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.hero-btn:hover {
+    background: white;
+}
+
+
+/* FEATURED SECTION */
+
+.featured {
+    padding: 80px 50px;
+}
+
+.featured h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 40px;
+}
+
+
+/* GAME CARDS */
+
+.game-container {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(250px, 1fr));
+
+    gap: 30px;
+}
+
+.game-card {
+    background: #1a1a1a;
+
+    border-radius: 15px;
+    overflow: hidden;
+
+    transition: 0.3s;
+}
+
+.game-card:hover {
+    transform: translateY(-10px);
+}
+
+.game-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.game-info {
+    padding: 20px;
+}
+
+.game-info h3 {
+    margin-bottom: 10px;
+    color: cyan;
+}
+
+
+/* FOOTER */
+
+footer {
+    background: #111;
+    text-align: center;
+    padding: 20px;
+}
+
+
+
+/* RESPONSIVE */
+/* RESPONSIVE TYPOGRAPHY */
+
+.hero-content h1 {
+    font-size: clamp(2rem, 6vw, 4rem);
+}
+
+.hero-content p {
+    font-size: clamp(1rem, 2vw, 1.3rem);
+}
+
+
+/* RESPONSIVE NAVBAR */
+
+.navbar {
+    width: 100%;
+    padding: 15px 5%;
+}
+
+
+/* RESPONSIVE GAME GRID */
+
+.game-container {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(250px, 1fr));
+
+    gap: 25px;
+}
+
+
+/* RESPONSIVE IMAGES */
+
+.game-card img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+}
+
+
+/* TABLET */
+
+@media(max-width: 900px) {
+
+    .hero {
+        padding: 20px;
+        text-align: center;
+    }
+
+    .featured {
+        padding: 60px 20px;
+    }
+
+}
+
+
+/* MOBILE */
+
+@media(max-width: 768px) {
+
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .nav-links li {
+        margin: 0;
+    }
+
+    .hero {
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .hero-content {
+        padding-top: 120px;
+    }
+
+}
+
+
+/* SMALL PHONES */
+
+@media(max-width: 480px) {
+
+    .hero-btn {
+        width: 100%;
+        display: inline-block;
+    }
+
+    .featured h2 {
+        font-size: 28px;
+    }
+
+}
