@@ -2,14 +2,31 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
-body {
-    font-family: 'Poppins', sans-serif;
-    background: #0d0d0d;
-    color: white;
+body{
+    background: linear-gradient(-45deg, #000000, #111111, #001f1f, #000000);
+    background-size: 400% 400%;
+    animation: bgAnimation 10s ease infinite;
+    color:white;
+}
+
+@keyframes bgAnimation{
+
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
 }
 
 a {
@@ -24,12 +41,16 @@ a {
     border-radius: 10px;
 }
 
+
+
 .game-card {
-    transition: 0.3s ease;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    position: relative;
 }
 
 .game-card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-10px) scale(1.03);
     box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
 }
 
@@ -153,40 +174,29 @@ section {
     padding: 60px 5%;
 }
 
-.game-container {
-    display: grid;
-
-    grid-template-columns:
-        repeat(auto-fit, minmax(250px, 1fr));
-
-    gap: 25px;
+.game-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
 }
 
-.game-card {
-    background: #1a1a1a;
-    border-radius: 15px;
-    overflow: hidden;
-
-    transition: 0.3s;
+.game-card{
+    background:#1a1a1a;
+    border-radius:15px;
+    text-align:center;
+    padding:15px;
+    min-height:350px;
 }
 
-.game-card:hover {
-    transform: translateY(-10px);
+.game-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    border-radius:10px;
 }
 
-.game-card img {
-    width: 100%;
-    aspect-ratio: 16/9;
-    object-fit: cover;
-}
-
-.game-info {
-    padding: 20px;
-}
-
-.game-info h2 {
-    margin-bottom: 10px;
-    color: cyan;
+.game-card h2{
+    margin-top:15px;
 }
 
 
