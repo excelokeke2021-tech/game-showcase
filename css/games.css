@@ -20,23 +20,38 @@ html {
 
 /* BODY */
 
+
 body {
-
-    background:
-        linear-gradient(-45deg, #000000, #081111, #001818, #000000);
-
+    background: linear-gradient(-45deg, #000000, #081111, #001d1d, #000000);
     background-size: 400% 400%;
     animation: bgAnimation 12s ease infinite;
-
     color: white;
     overflow-x: hidden;
+    line-height: 1.7;
 }
 
+body {
+    opacity: 0;
+    filter: blur(6px);
+    animation: pageLoad 0.9s ease forwards;
+}
+
+@keyframes pageLoad {
+    from {
+        opacity: 0;
+        filter: blur(6px);
+        transform: scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        filter: blur(0);
+        transform: scale(1);
+    }
+}
 
 /* BACKGROUND ANIMATION */
-
 @keyframes bgAnimation {
-
     0% {
         background-position: 0% 50%;
     }
@@ -48,10 +63,7 @@ body {
     100% {
         background-position: 0% 50%;
     }
-
 }
-
-
 /* GLOBAL */
 
 section {
